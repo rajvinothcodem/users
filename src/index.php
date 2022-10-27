@@ -1,6 +1,10 @@
 <?php
   include 'inc/header.php';
   Session::CheckSession();
+  if(Session::get('msg'))
+  {
+    echo Session::get('msg');
+  }
 ?>
 <div class="card ">
   <div class="card-header">
