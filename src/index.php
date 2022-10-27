@@ -4,6 +4,7 @@
   if(Session::get('msg'))
   {
     echo Session::get('msg');
+    Session::unset('msg');
   }
 ?>
 <div class="card ">

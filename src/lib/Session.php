@@ -60,4 +60,15 @@ class Session
       header('Location:index.php');
     }
   }
+
+  //session unset method
+  public static function unset($key)
+  {
+    if (isset($_SESSION[$key])) {
+      unset($_SESSION[$key]);
+    }else{
+      return false;
+    }
+  }
+  
 }
