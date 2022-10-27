@@ -44,7 +44,7 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `firstname`, `lastname`, `date_of_birth`, `email`, `password`, `mobile`, `created_at`, `updated_at`) VALUES
-(1, 'Rajvinoth', 'Swamy', '2022-02-10', 'rajswamy10@gmail.com', 'b5175dbdee72950907ba70395e135bc13f3c0a12', '9597498845', '2022-10-25 09:47:25', '2022-10-25 09:47:25');
+(1, 'Test', 'Test', '2022-02-10', 'test@test.com', 'b5175dbdee72950907ba70395e135bc13f3c0a12', '123456789', '2022-10-25 09:47:25', '2022-10-25 09:47:25');
 
 --
 -- Indexes for dumped tables
