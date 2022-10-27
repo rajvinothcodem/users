@@ -1,0 +1,27 @@
+version: "3"
+services:
+  apache:
+    build: .
+    ports: # host:container
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./src:/var/www/html
+  db:
+    image: mariadb:10.4
+    command: --max_allowed_packet=64M
+      --optimizer_use_condition_selectivity=1
+      --optimizer_switch="rowid_filter=off"
+    ports:
+      - "3306:3306"
+    env_file: env/db.env
+    volumes:
+      - ./dbdata:/var/lib/mysql
+      - ./dbdata:/docker-entrypoint-initdb.d
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    env_file: env/db.env
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
